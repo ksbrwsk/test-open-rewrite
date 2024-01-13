@@ -2,14 +2,14 @@ package de.ksbrwsk.openrewrite;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class PersonTest {
 
     @Test
     void create() {
         Person person = new Person(1L, "John Doe");
-        assertEquals(person.name(), "John Doe");
-        assertEquals(person.id(), 1L);
+        assertThat(person.name()).isEqualTo("John Doe");
+        assertThat(person.id()).isEqualTo(1L);
     }
 }

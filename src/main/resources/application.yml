@@ -9,6 +9,9 @@ spring:
       idle-timeout: 10000
       connection-timeout: 10000
       max-lifetime: 120000
+  threads:
+    virtual:
+      enabled: true
 server:
   error:
     include-stacktrace: never

@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.validation.Validator;
+import jakarta.validation.Validator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class PersonValidationTest {
@@ -18,28 +18,28 @@ class PersonValidationTest {
     void nameShouldNotBeBlank() {
         Person person = new Person("");
         var violations = validator.validate(person);
-        assertEquals(violations.size(), 2);
+        assertThat(violations.size()).isEqualTo(2);
     }
 
     @Test
     void nameShouldNotBeLongerThan10() {
         Person person = new Person("12345678901");
         var violations = validator.validate(person);
-        assertEquals(violations.size(), 1);
+        assertThat(violations.size()).isEqualTo(1);
     }
 
     @Test
     void nameShouldNotBeShorterThan1() {
         Person person = new Person("");
         var violations = validator.validate(person);
-        assertEquals(violations.size(), 2);
+        assertThat(violations.size()).isEqualTo(2);
     }
 
     @Test
     void nameShouldBeValid() {
         Person person = new Person("John Doe");
         var violations = validator.validate(person);
-        assertEquals(violations.size(), 0);
+        assertThat(violations.size()).isEqualTo(0);
     }
 
 }
