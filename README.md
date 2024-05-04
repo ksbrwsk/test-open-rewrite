@@ -5,7 +5,7 @@ Testing open-rewrite for Spring Boot Upgrade 3.2, JUnit 5 to AssertJ.
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.18.0</version>
+    <version>5.29.0</version>
     <configuration>
         <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
@@ -16,12 +16,12 @@ Testing open-rewrite for Spring Boot Upgrade 3.2, JUnit 5 to AssertJ.
         <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.2.0</version>
+            <version>5.8.0</version>
         </dependency>
         <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.2.0</version>
+            <version>2.7.0</version>
         </dependency>
     </dependencies>
 </plugin>
